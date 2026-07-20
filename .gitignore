@@ -1,0 +1,15 @@
+# /
+
+/**/.DS_Store
+/note/
+
+# /app
+
+/app/bin/
+/app/tmp/
+/app/db/data/
+/app/sqlc/querier/
+/app/ui/internal/templ/**/*_templ.go
+/app/ui/static/js/htmx.min.js
+/app/ui/static/css/main.css
+/app/ui/static/css/main.css.map

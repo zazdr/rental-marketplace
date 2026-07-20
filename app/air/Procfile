@@ -1,0 +1,4 @@
+go:    air -c ./air/go.toml
+sqlc:  air -c ./air/sqlc.toml
+templ: air -c ./air/templ.toml
+scss:  air -c ./air/scss.toml

@@ -1,0 +1,13 @@
+root = "./"
+tmp_dir = "./tmp/"
+
+[build]
+
+cmd = "sqlc generate -f ./sqlc/sqlc.json"
+entrypoint = "true"
+
+include_ext = ["sql", "json"]
+include_dir = ["./sqlc/", "./migration/"]
+
+exclude_unchanged = true
+delay = 2000

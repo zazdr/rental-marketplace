@@ -1,0 +1,13 @@
+root = "./"
+tmp_dir = "./tmp/"
+
+[build]
+
+cmd = "sass ./ui/internal/scss/main.scss ./ui/static/css/main.css"
+entrypoint = "true"
+
+include_ext = ["scss"]
+include_dir = ["./ui/internal/scss/"]
+
+exclude_unchanged = true
+delay = 2000

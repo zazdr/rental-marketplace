@@ -1,0 +1,13 @@
+root = "./"
+tmp_dir = "./tmp/"
+
+[build]
+
+cmd = "templ generate -path ./ui/internal/templ/"
+entrypoint = "true"
+
+include_ext = ["templ"]
+include_dir = ["./ui/internal/templ/"]
+
+exclude_unchanged = true
+delay = 2000

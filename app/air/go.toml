@@ -1,0 +1,26 @@
+root = "./"
+tmp_dir = "./tmp/"
+
+[build]
+
+cmd = "go build -o ./tmp/app ./cmd"
+full_bin = """
+	SERVER_HOST=0.0.0.0 \
+	SERVER_PORT=4000 \
+	DB_URL=postgresql://postgres:pass@127.0.0.1:5432/postgres \
+	./tmp/app
+"""
+
+include_ext = ["go"]
+include_dir = ["./cmd/", "./config/"]
+include_file = ["./go.mod", "./go.sum"]
+
+exclude_unchanged = true
+delay = 2000
+
+[proxy]
+
+enabled = true
+app_port = 4000
+proxy_port = 4040
+proxy_host = "0.0.0.0"

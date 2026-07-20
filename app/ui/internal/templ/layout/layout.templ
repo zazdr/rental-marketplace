@@ -1,0 +1,30 @@
+package layout
+
+import "app/dto"
+
+templ Layout(state *dto.State) {
+	if state.Htmx {
+		{ children... }
+	} else {
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<link href="/static/css/main.css" rel="stylesheet"/>
+				<script src="/static/js/htmx.min.js" defer></script>
+			</head>
+			<body>
+				<header>
+					<div class="box"></div>
+				</header>
+				<main>
+					<div class="box">
+						{ children... }
+					</div>
+				</main>
+				<footer>
+					<div class="box"></div>
+				</footer>
+			</body>
+		</html>
+	}
+}

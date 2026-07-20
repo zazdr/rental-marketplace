@@ -1,0 +1,10 @@
+package signup
+
+import "app/dto"
+import "app/ui/internal/templ/layout"
+
+templ Signup(state *dto.State, form *dto.FormUserSignup) {
+	@layout.Layout(state) {
+		<section class="signup"></section>
+	}
+}

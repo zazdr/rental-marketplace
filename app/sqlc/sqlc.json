@@ -1,0 +1,17 @@
+{
+	"version": "2",
+	"sql": [
+		{
+			"engine": "postgresql",
+			"queries": "./sql/**/*.sql",
+			"schema": "../migration/",
+			"gen": {
+				"go": {
+					"package": "querier",
+					"out": "./querier/",
+					"output_models_file_name": "model.go",
+				}
+			},
+		}
+	]
+}

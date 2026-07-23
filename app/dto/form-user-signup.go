@@ -1,7 +1,7 @@
 package dto
 
 type FormUserSignup struct {
-	Form struct {
+	Value struct {
 		Mail           string `form:"mail"`
 		MailCode       string `form:"mail_code"`
 		Password       string `form:"password"`

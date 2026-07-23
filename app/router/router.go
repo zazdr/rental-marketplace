@@ -14,6 +14,8 @@ func New(
 	server *server.Server,
 	handler *handler.Handler,
 ) {
+	server.Echo.HTTPErrorHandler = handler.Fail.Valid
+
 	server.Echo.StaticFS(
 		shared.RouterStatic,
 		echo.MustSubFS(ui.Static.File, ui.Static.Dir),

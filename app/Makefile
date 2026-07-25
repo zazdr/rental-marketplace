@@ -1,7 +1,7 @@
 .PHONY: start test test-cover
 
 start:
-	goreman -f ./air/Procfile start
+	@goreman -f ./air/Procfile start
 
 test:
 	@mkdir -p ./tmp/

@@ -18,19 +18,19 @@ type Config struct {
 func New() (*Config, error) {
 	config := &Config{}
 
-	config.Server.Host = os.Getenv("SERVER_HOST")
+	config.Server.Host = os.Getenv("APP_SERVER_HOST")
 	if config.Server.Host == "" {
-		return nil, errors.New("[config] SERVER_HOST is not set")
+		return nil, errors.New("[config] APP_SERVER_HOST is not set")
 	}
 
-	config.Server.Port = os.Getenv("SERVER_PORT")
+	config.Server.Port = os.Getenv("APP_SERVER_PORT")
 	if config.Server.Port == "" {
-		return nil, errors.New("[config] SERVER_PORT is not set")
+		return nil, errors.New("[config] APP_SERVER_PORT is not set")
 	}
 
-	config.Db.URL = os.Getenv("DB_URL")
+	config.Db.URL = os.Getenv("APP_DB_URL")
 	if config.Db.URL == "" {
-		return nil, errors.New("[config] DB_URL is not set")
+		return nil, errors.New("[config] APP_DB_URL is not set")
 	}
 
 	return config, nil

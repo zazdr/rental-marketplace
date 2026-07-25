@@ -10,8 +10,7 @@
 /app/db/data/
 /app/sqlc/querier/
 /app/ui/internal/templ/**/*_templ.go
-/app/ui/static/js/htmx.min.js
-/app/ui/static/css/main.css
-/app/ui/static/css/main.css.map
-/app/env/.env.dev
-/app/env/.env.test
+/app/ui/static/js/
+/app/ui/static/css/
+/app/env/.env.*
+!/app/env/.env.*.example

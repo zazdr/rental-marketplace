@@ -7,9 +7,7 @@ cmd = "go build -o ./tmp/app ./cmd"
 full_bin = "set -a && . ./env/.env.dev && ./tmp/app"
 
 include_ext = ["go"]
-include_dir = ["./cmd/", "./config/"]
 include_file = ["./go.mod", "./go.sum"]
-
 exclude_unchanged = true
 delay = 2000
 

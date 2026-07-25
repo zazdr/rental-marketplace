@@ -20,17 +20,24 @@ func New(dep *dep.Dep) Fail {
 }
 
 func (f *Fail) Valid(c *echo.Context, err error) {
+	var code int
+	var message string
+
 	if fail, ok := errors.AsType[*dto.Fail](err); ok {
-		if fail.Code < 500 {
-			c.String(fail.Code, fail.Message)
-			return
+		code = fail.Code
+		if code < 500 {
+			message = fail.Message
 		} else {
-			c.String(
-				http.StatusInternalServerError,
-				http.StatusText(http.StatusInternalServerError),
-			)
+			message = http.StatusText(fail.Code)
 		}
+	} else {
+		code = http.StatusInternalServerError
+		message = http.StatusText(http.StatusInternalServerError)
 	}
 
-	c.Logger().Error(err.Error())
+	if code > 499 {
+		c.Logger().Error(err.Error())
+	}
+
+	c.String(code, message)
 }

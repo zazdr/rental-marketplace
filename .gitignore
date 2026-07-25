@@ -13,3 +13,5 @@
 /app/ui/static/js/htmx.min.js
 /app/ui/static/css/main.css
 /app/ui/static/css/main.css.map
+/app/env/.env.dev
+/app/env/.env.test

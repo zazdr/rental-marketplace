@@ -4,12 +4,7 @@ tmp_dir = "./tmp/"
 [build]
 
 cmd = "go build -o ./tmp/app ./cmd"
-full_bin = """
-	SERVER_HOST=0.0.0.0 \
-	SERVER_PORT=4000 \
-	DB_URL=postgresql://postgres:pass@127.0.0.1:5432/postgres \
-	./tmp/app
-"""
+full_bin = "set -a && . ./env/.env.dev && ./tmp/app"
 
 include_ext = ["go"]
 include_dir = ["./cmd/", "./config/"]

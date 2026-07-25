@@ -1,6 +1,8 @@
 package layout
 
 import "app/dto"
+import "app/ui/internal/templ/layout/header"
+import "app/ui/internal/templ/layout/footer"
 
 templ Layout(state *dto.State) {
 	if state.Htmx {
@@ -12,17 +14,21 @@ templ Layout(state *dto.State) {
 				<link href="/static/css/main.css" rel="stylesheet"/>
 				<script src="/static/js/htmx.min.js" defer></script>
 			</head>
-			<body>
-				<header>
-					<div class="box"></div>
+			<body class="layout">
+				<header class="layout__header">
+					<div class="container">
+						@header.Header()
+					</div>
 				</header>
-				<main>
-					<div class="box">
+				<main class="layout__main">
+					<div class="container">
 						{ children... }
 					</div>
 				</main>
-				<footer>
-					<div class="box"></div>
+				<footer class="layout__footer">
+					<div class="container">
+						@footer.Footer()
+					</div>
 				</footer>
 			</body>
 		</html>

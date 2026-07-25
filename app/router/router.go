@@ -22,4 +22,5 @@ func New(
 	)
 
 	server.Echo.GET(shared.RouterUserSignup, handler.User.Signup.Get)
+	server.Echo.POST(shared.RouterUserSignup, handler.User.Signup.Post)
 }

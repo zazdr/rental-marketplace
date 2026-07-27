@@ -21,7 +21,7 @@ func New(dep *dep.Dep) Signup {
 }
 
 func (s *Signup) Get(c *echo.Context) error {
-	return u.Render(c, d.UI.Layout(d.UI.User.Signup(dto.FormUserSignupNew())))
+	return u.RenderFull(d, c, d.UI.User.Signup(dto.FormUserSignupNew()))
 }
 
 func (s *Signup) Post(c *echo.Context) error {
@@ -30,7 +30,7 @@ func (s *Signup) Post(c *echo.Context) error {
 	if valid, err := s.valid(c, form); err != nil {
 		return err
 	} else if !valid {
-		return u.Render(c, d.UI.Layout(d.UI.User.Signup(form)))
+		return u.RenderFull(d, c, d.UI.User.Signup(form))
 	}
 
 	return c.Redirect(http.StatusSeeOther, shared.RouterUserSignup)

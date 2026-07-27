@@ -30,5 +30,5 @@ func (f *Fail) Valid(c *echo.Context, err error) {
 		c.Logger().Error(err.Error())
 	}
 
-	u.Render(c, d.UI.Layout(d.UI.Fail(code, message)))
+	u.RenderFull(d, c, d.UI.Fail(code, message))
 }

@@ -4,7 +4,6 @@ import (
 	"app/handler/internal/dep"
 	"app/handler/internal/handler/fail"
 	"app/handler/internal/handler/user/signup"
-	"app/handler/internal/util"
 	"app/store"
 	"app/ui"
 )
@@ -17,7 +16,7 @@ type Handler struct {
 }
 
 func New(store *store.Store, ui *ui.UI) *Handler {
-	dep := dep.New(util.New(), store, ui)
+	dep := dep.New(store, ui)
 
 	handler := &Handler{}
 

@@ -11,21 +11,17 @@ import (
 	"github.com/labstack/echo/v5"
 )
 
-type Signup struct {
-	d *dep.Dep
-}
+type Signup struct{}
+
+var d *dep.Dep
 
 func New(dep *dep.Dep) Signup {
-	return Signup{
-		d: dep,
-	}
+	d = dep
+	return Signup{}
 }
 
 func (s *Signup) Get(c *echo.Context) error {
-	return s.d.Util.Render(
-		c,
-		s.d.UI.User.Signup(s.d.Util.State(c), dto.FormUserSignupNew()),
-	)
+	return u.Render(c, d.UI.Layout(d.UI.User.Signup(dto.FormUserSignupNew())))
 }
 
 func (s *Signup) Post(c *echo.Context) error {
@@ -34,7 +30,7 @@ func (s *Signup) Post(c *echo.Context) error {
 	if valid, err := s.valid(c, form); err != nil {
 		return err
 	} else if !valid {
-		return s.d.Util.Render(c, s.d.UI.User.Signup(s.d.Util.State(c), form))
+		return u.Render(c, d.UI.Layout(d.UI.User.Signup(form)))
 	}
 
 	return c.Redirect(http.StatusSeeOther, shared.RouterUserSignup)

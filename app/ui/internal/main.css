@@ -1,0 +1,7 @@
+/* /global/ */
+
+@import "./global/css/reset.css";
+
+/* /component/ */
+
+@import "./component/container/container.css";

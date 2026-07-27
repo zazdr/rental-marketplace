@@ -2,8 +2,9 @@ package ui
 
 import (
 	"app/dto"
-	"app/ui/internal/templ/page/fail"
-	"app/ui/internal/templ/page/user/signup"
+	"app/ui/internal/layout"
+	"app/ui/internal/page/fail"
+	"app/ui/internal/page/user/signup"
 	"embed"
 
 	"github.com/a-h/templ"
@@ -17,9 +18,10 @@ type UI struct {
 		File embed.FS
 		Dir  string
 	}
-	Fail func(state *dto.State, code int, message string) templ.Component
-	User struct {
-		Signup func(state *dto.State, form *dto.FormUserSignup) templ.Component
+	Layout func(main templ.Component) templ.Component
+	Fail   func(code int, message string) templ.Component
+	User   struct {
+		Signup func(form *dto.FormUserSignup) templ.Component
 	}
 }
 
@@ -29,8 +31,9 @@ func New() *UI {
 	ui.Static.File = static
 	ui.Static.Dir = "static"
 
-	ui.Fail = fail.Fail
+	ui.Layout = layout.Layout
 
+	ui.Fail = fail.Fail
 	ui.User.Signup = signup.Signup
 
 	return ui

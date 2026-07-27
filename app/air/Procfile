@@ -1,3 +1,5 @@
 go:    air -c ./air/go.toml
 sqlc:  air -c ./air/sqlc.toml
 templ: air -c ./air/templ.toml
+css:   air -c ./air/css.toml
+js:    air -c ./air/js.toml

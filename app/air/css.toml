@@ -1,0 +1,17 @@
+root = "./"
+tmp_dir = "./tmp/"
+
+[build]
+
+cmd = """
+esbuild --bundle --minify \
+	./ui/internal/main.css \
+	--outfile=./ui/static/css/main.min.css
+"""
+entrypoint = "true"
+
+include_ext = ["css"]
+include_dir = ["./ui/internal/"]
+
+exclude_unchanged = true
+delay = 2000

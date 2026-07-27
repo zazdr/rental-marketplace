@@ -1,0 +1,17 @@
+root = "./"
+tmp_dir = "./tmp/"
+
+[build]
+
+cmd = """
+esbuild --bundle --minify \
+	./ui/internal/main.js \
+	--outfile=./ui/static/js/main.min.js
+"""
+entrypoint = "true"
+
+include_ext = ["js"]
+include_dir = ["./ui/internal/"]
+
+exclude_unchanged = true
+delay = 2000

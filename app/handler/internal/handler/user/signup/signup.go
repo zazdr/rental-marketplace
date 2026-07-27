@@ -3,6 +3,7 @@ package signup
 import (
 	"app/dto"
 	"app/handler/internal/dep"
+	"app/handler/internal/u"
 	"app/shared"
 	"net/http"
 	"strings"
@@ -47,7 +48,7 @@ func (s *Signup) valid(
 	f := &form.Fail
 
 	if err := c.Bind(v); err != nil {
-		return false, dto.FailClientNew(http.StatusBadRequest)
+		return false, u.FailClientNew(http.StatusBadRequest)
 	}
 
 	if strings.TrimSpace(v.Mail) == "" {

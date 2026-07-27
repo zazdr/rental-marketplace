@@ -1,16 +1,18 @@
 [tools]
 
-# /app
+# /
 
 "core:go" = "1.26.5"
+"core:node" = "24.18.0"
 
-# /app/air
+# /app/air/
 
 "github:mattn/goreman" = "0.3.17"
 "github:air-verse/air" = "1.65.3"
 "github:sqlc-dev/sqlc" = "1.31.1"
 "github:a-h/templ" = "0.3.1020"
+"npm:esbuild" = "0.28.1"
 
-# /app/db
+# /app/db/
 
 "github:theseus-rs/postgresql-binaries" = "18.4.0"

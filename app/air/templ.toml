@@ -3,11 +3,11 @@ tmp_dir = "./tmp/"
 
 [build]
 
-cmd = "templ generate -path ./ui/internal/templ/"
+cmd = "templ generate -path ./ui/internal/"
 entrypoint = "true"
 
 include_ext = ["templ"]
-include_dir = ["./ui/internal/templ/"]
+include_dir = ["./ui/internal/"]
 
 exclude_unchanged = true
 delay = 2000

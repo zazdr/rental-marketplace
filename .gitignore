@@ -3,14 +3,13 @@
 /**/.DS_Store
 /note/
 
-# /app
+# /app/
 
 /app/bin/
 /app/tmp/
 /app/db/data/
 /app/sqlc/querier/
-/app/ui/internal/templ/**/*_templ.go
-/app/ui/static/js/
-/app/ui/static/css/
+/app/ui/internal/**/*_templ.go
+/app/ui/static/
 /app/env/.env.*
 !/app/env/.env.*.example

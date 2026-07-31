@@ -27,7 +27,7 @@ func (s *Signup) Get(c *echo.Context) error {
 func (s *Signup) Post(c *echo.Context) error {
 	form := dto.FormUserSignupNew()
 
-	if valid, err := s.valid(c, form); err != nil {
+	if valid, err := valid(c, form); err != nil {
 		return err
 	} else if !valid {
 		return u.RenderFull(d, c, d.UI.User.Signup(form))
@@ -36,7 +36,7 @@ func (s *Signup) Post(c *echo.Context) error {
 	return c.Redirect(http.StatusSeeOther, shared.RouterUserSignup)
 }
 
-func (s *Signup) valid(
+func valid(
 	c *echo.Context,
 	form *dto.FormUserSignup,
 ) (bool, error) {

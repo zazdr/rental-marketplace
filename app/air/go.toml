@@ -8,10 +8,10 @@ full_bin = "set -a && . ./env/.env.dev && ./tmp/app"
 
 include_ext = ["go"]
 include_file = [
-	"./go.mod",
-	"./go.sum",
-	"./ui/static/css/main.min.css",
-	"./ui/static/js/main.min.js",
+	"go.mod",
+	"go.sum",
+	"ui/static/css/main.min.css",
+	"ui/static/js/main.min.js",
 ]
 
 exclude_unchanged = true

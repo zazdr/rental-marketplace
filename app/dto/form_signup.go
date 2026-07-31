@@ -1,6 +1,6 @@
 package dto
 
-type FormUserSignup struct {
+type FormSignup struct {
 	Value struct {
 		Mail           string `form:"mail"`
 		MailCode       string `form:"mail_code"`
@@ -21,20 +21,20 @@ type FormUserSignup struct {
 	}
 }
 
-func (fus *FormUserSignup) Valid() bool {
-	return fus.Fail.Mail == "" &&
-		fus.Fail.MailCode == "" &&
-		fus.Fail.Password == "" &&
-		fus.Fail.RepeatPassword == ""
+func (fs *FormSignup) Valid() bool {
+	return fs.Fail.Mail == "" &&
+		fs.Fail.MailCode == "" &&
+		fs.Fail.Password == "" &&
+		fs.Fail.RepeatPassword == ""
 }
 
-func FormUserSignupNew() *FormUserSignup {
-	fus := &FormUserSignup{}
+func FormSignupNew() *FormSignup {
+	fs := &FormSignup{}
 
-	fus.Name.Mail = "mail"
-	fus.Name.MailCode = "mail_code"
-	fus.Name.Password = "password"
-	fus.Name.RepeatPassword = "repeat_password"
+	fs.Name.Mail = "mail"
+	fs.Name.MailCode = "mail_code"
+	fs.Name.Password = "password"
+	fs.Name.RepeatPassword = "repeat_password"
 
-	return fus
+	return fs
 }

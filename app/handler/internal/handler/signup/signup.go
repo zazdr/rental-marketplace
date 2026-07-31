@@ -21,24 +21,24 @@ func New(dep *dep.Dep) Signup {
 }
 
 func (s *Signup) Get(c *echo.Context) error {
-	return u.RenderFull(d, c, d.UI.User.Signup(dto.FormUserSignupNew()))
+	return u.RenderFull(d, c, d.UI.Signup(dto.FormSignupNew()))
 }
 
 func (s *Signup) Post(c *echo.Context) error {
-	form := dto.FormUserSignupNew()
+	form := dto.FormSignupNew()
 
 	if valid, err := valid(c, form); err != nil {
 		return err
 	} else if !valid {
-		return u.RenderFull(d, c, d.UI.User.Signup(form))
+		return u.RenderFull(d, c, d.UI.Signup(form))
 	}
 
-	return c.Redirect(http.StatusSeeOther, shared.RouterUserSignup)
+	return c.Redirect(http.StatusSeeOther, shared.RouterSignup)
 }
 
 func valid(
 	c *echo.Context,
-	form *dto.FormUserSignup,
+	form *dto.FormSignup,
 ) (bool, error) {
 	v := &form.Value
 	f := &form.Fail

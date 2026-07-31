@@ -4,7 +4,7 @@ import (
 	"app/dto"
 	"app/ui/internal/layout"
 	"app/ui/internal/page/fail"
-	"app/ui/internal/page/user/signup"
+	"app/ui/internal/page/signup"
 	"embed"
 
 	"github.com/a-h/templ"
@@ -20,9 +20,7 @@ type UI struct {
 	}
 	Layout func(main templ.Component) templ.Component
 	Fail   func(code int, message string) templ.Component
-	User   struct {
-		Signup func(form *dto.FormUserSignup) templ.Component
-	}
+	Signup func(form *dto.FormSignup) templ.Component
 }
 
 func New() *UI {
@@ -34,7 +32,7 @@ func New() *UI {
 	ui.Layout = layout.Layout
 
 	ui.Fail = fail.Fail
-	ui.User.Signup = signup.Signup
+	ui.Signup = signup.Signup
 
 	return ui
 }

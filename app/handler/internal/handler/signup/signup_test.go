@@ -13,7 +13,7 @@ func TestSignupGet(t *testing.T) {
 
 	resp := client.Request(
 		http.MethodGet,
-		shared.RouterUserSignup,
+		shared.RouterSignup,
 		http.Header{},
 		"",
 	)

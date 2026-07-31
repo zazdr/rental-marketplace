@@ -21,6 +21,6 @@ func New(
 		echo.MustSubFS(ui.Static.File, ui.Static.Dir),
 	)
 
-	server.Echo.GET(shared.RouterUserSignup, handler.User.Signup.Get)
-	server.Echo.POST(shared.RouterUserSignup, handler.User.Signup.Post)
+	server.Echo.GET(shared.RouterSignup, handler.Signup.Get)
+	server.Echo.POST(shared.RouterSignup, handler.Signup.Post)
 }

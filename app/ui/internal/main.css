@@ -1,7 +1,18 @@
-/* /global/ */
+/* global */
 
 @import "./global/css/reset.css";
 
-/* /component/ */
+/* layout */
+
+@import "./layout/layout.css";
+
+/* component */
 
 @import "./component/container/container.css";
+@import "./component/header/header.css";
+@import "./component/footer/footer.css";
+
+/* page */
+
+@import "./page/fail/fail.css";
+@import "./page/signup/signup.css";

@@ -1,9 +1,6 @@
 package layout
 
-import (
-	"app/ui/internal/component/footer"
-	"app/ui/internal/component/header"
-)
+import "app/ui/internal/component/header"
 
 templ Layout(main templ.Component) {
 	<html>
@@ -17,14 +14,11 @@ templ Layout(main templ.Component) {
 			<script src="/static/js/htmx.min.js" defer></script>
 		</head>
 		<body class="layout">
-			<div class="layout__header container">
-				@header.Header()
-			</div>
 			<div class="layout__main container">
 				@main
 			</div>
-			<div class="layout__footer container">
-				@footer.Footer()
+			<div class="layout__header container">
+				@header.Header()
 			</div>
 		</body>
 	</html>

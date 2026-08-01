@@ -3,14 +3,10 @@ tmp_dir = "./tmp/"
 
 [build]
 
-cmd = """
-esbuild --bundle --minify \
-	./ui/internal/main.js \
-	--outfile=./ui/static/js/main.min.js
-"""
+cmd = "tailwindcss --minify --output ./ui/static/css/tailwind.min.css"
 entrypoint = "true"
 
-include_ext = ["js"]
+include_ext = ["templ"]
 include_dir = ["./ui/internal/"]
 
 exclude_unchanged = true

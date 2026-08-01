@@ -3,14 +3,15 @@ package layout
 import "app/ui/internal/component/header"
 
 templ Layout(main templ.Component) {
+	<!DOCTYPE html>
 	<html>
 		<head>
 			<meta name="viewport" content="width=device-width"/>
-			<link href="/static/css/main.min.css" rel="stylesheet"/>
-			<script src="/static/js/main.min.js" defer></script>
+			<link href="/static/css/tailwind.min.css" rel="stylesheet"/>
 			<script src="/static/js/htmx.min.js" defer></script>
+			<script src="/static/js/hyperscript.min.js" defer></script>
 		</head>
-		<body class="layout">
+		<body class="layout bg-red-700">
 			<div class="layout__main container">
 				@main
 			</div>

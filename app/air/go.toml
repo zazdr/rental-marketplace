@@ -10,8 +10,7 @@ include_ext = ["go"]
 include_file = [
 	"go.mod",
 	"go.sum",
-	"ui/static/css/main.min.css",
-	"ui/static/js/main.min.js",
+	"ui/static/css/tailwind.min.css",
 ]
 
 exclude_unchanged = true

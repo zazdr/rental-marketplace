@@ -3,6 +3,7 @@ tmp_dir = "./tmp/"
 
 [build]
 
+pre_cmd = ["echo '@import \"tailwindcss\";' > ./tmp/main.css"]
 cmd = "tailwindcss --minify --output ./ui/static/css/tailwind.min.css"
 entrypoint = "true"
 

@@ -3,9 +3,9 @@ package dto
 type FormSignup struct {
 	Value struct {
 		Mail           string `form:"mail"`
-		MailCode       string `form:"mail_code"`
+		MailCode       string `form:"mail-code"`
 		Password       string `form:"password"`
-		RepeatPassword string `form:"repeat_password"`
+		RepeatPassword string `form:"repeat-password"`
 	}
 	Name struct {
 		Mail           string
@@ -32,9 +32,9 @@ func FormSignupNew() *FormSignup {
 	fs := &FormSignup{}
 
 	fs.Name.Mail = "mail"
-	fs.Name.MailCode = "mail_code"
+	fs.Name.MailCode = "mail-code"
 	fs.Name.Password = "password"
-	fs.Name.RepeatPassword = "repeat_password"
+	fs.Name.RepeatPassword = "repeat-password"
 
 	return fs
 }

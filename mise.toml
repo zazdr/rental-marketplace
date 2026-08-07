@@ -3,7 +3,6 @@
 # /
 
 "core:go" = "1.26.5"
-"core:node" = "24.18.0"
 
 # /app/air
 
